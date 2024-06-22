@@ -1,7 +1,8 @@
-import axios from 'axios';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
+import { fetchProducts } from '@/api';
 import styles from './ProductList.module.css';
 
 interface Product {
@@ -16,7 +17,7 @@ function ProductList() {
 
   // 한 번만 실행될 때 빈 배열을 두 번째 인자로 넘김, 이를 dependency array라고 함
   useEffect(() => {
-    axios.get('http://localhost:4000/products').then(response => {
+    fetchProducts().then(response => {
       setProducts(response.data);
     });
   }, []);
@@ -26,15 +27,17 @@ function ProductList() {
       {products.map(product => {
         return (
           <li key={product.id} className={styles.item}>
-            <div>
-              <Image
-                src={product.imageUrl}
-                alt={product.name}
-                width={300}
-                height={250}
-              />
-            </div>
-            <div>{product.name}</div>
+            <Link href={`/products/${product.id}`}>
+              <div>
+                <Image
+                  src={product.imageUrl}
+                  alt={product.name}
+                  width={300}
+                  height={250}
+                />
+              </div>
+              <div>{product.name}</div>
+            </Link>
           </li>
         );
       })}
