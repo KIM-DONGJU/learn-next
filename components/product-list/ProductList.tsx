@@ -3,14 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { fetchProducts } from '@/api';
+import { Product } from '@/interfaces/product';
 import styles from './ProductList.module.css';
-
-interface Product {
-  id: string;
-  name: string;
-  price: string;
-  imageUrl: string;
-}
 
 function ProductList() {
   const [products, setProducts] = useState<Product[]>([]);
