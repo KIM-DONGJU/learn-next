@@ -14,6 +14,7 @@ function CardPage({
   );
 }
 
+// pageProps 형태로 response를 받아옴
 export async function getServerSideProps() {
   const { data } = await fetchCarts();
 
