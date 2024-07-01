@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import axios from 'axios';
 
 import { removeCartItem } from '@/api';
 import { Product } from '@/interfaces/product';
@@ -20,8 +21,10 @@ function CartList({ carts }: CartListProps) {
   const removeCart = async (id: string) => {
     // 1. 삭제 api 호출
     // 2. 상품 목록 갱신
-    const { data } = await removeCartItem(id);
-    alert(`${data.name} 상품이 삭제되었습니다.`);
+    const { data } = await axios.post('http://localhost:3000/api/carts', {
+      id,
+    });
+    alert(data);
     router.replace(router.asPath);
   };
 
