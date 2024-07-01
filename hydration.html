@@ -1,0 +1,21 @@
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<div id="app"></div>
+
+<script type="text/babel">
+  function MyApp() {
+    const [message, setMessage ] = React.useState('Hello React');
+
+    return (
+      <section>
+        <h1>{message}</h1>
+        <p>리액트가 그려주는 UI</p>
+      </section>
+    );
+  }
+
+  const container = document.querySelector('#app');
+  ReactDOM.hydrateRoot(container, <MyApp/>);
+</script>
