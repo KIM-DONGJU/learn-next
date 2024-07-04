@@ -5,31 +5,25 @@ import ProductList from '@/components/product-list/ProductList';
 
 function Counter() {
   const [counter, setCounter] = useState(0);
-
   const increaseCounter = () => {
     setCounter(counter + 1);
-  }
+  };
 
   const decreaseCounter = () => {
     setCounter(counter - 1);
-  }
+  };
 
   return (
     <div>
-      <p data-cy="counter">{ counter }</p>
-      <button data-cy="add-button" onClick={increaseCounter}>+</button>
-      <button data-cy="minus-button" onClick={decreaseCounter}>-</button>
+      <p data-cy="counter">{counter}</p>
+      <button onClick={increaseCounter}>+</button>
+      <button onClick={decreaseCounter}>-</button>
     </div>
   );
 }
 
 function ProductPage() {
-  return (
-    <div>
-      <ProductHeader title="상품 목록 페이지" />
-      <ProductList />
-    </div>
-  );
+  return <Counter />;
 }
 
 /**
