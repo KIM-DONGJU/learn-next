@@ -1,5 +1,27 @@
+import { useState } from 'react';
+
 import ProductHeader from '@/components/ProductHeader';
 import ProductList from '@/components/product-list/ProductList';
+
+function Counter() {
+  const [counter, setCounter] = useState(0);
+
+  const increaseCounter = () => {
+    setCounter(counter + 1);
+  }
+
+  const decreaseCounter = () => {
+    setCounter(counter - 1);
+  }
+
+  return (
+    <div>
+      <p data-cy="counter">{ counter }</p>
+      <button onClick={increaseCounter}>+</button>
+      <button onClick={decreaseCounter}>-</button>
+    </div>
+  );
+}
 
 function ProductPage() {
   return (
@@ -17,4 +39,4 @@ function ProductPage() {
  *
  */
 
-export default ProductPage;
+export default Counter;
