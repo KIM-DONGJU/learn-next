@@ -21,7 +21,7 @@ function ProductInfo({ productDetail }: ProductInfoProps) {
   };
 
   return (
-    <div className={styles.container}>
+    <div data-cy="product-info" className={styles.container}>
       <div>
         <Image src={imageUrl} alt={name} width={300} height={250} />
       </div>
