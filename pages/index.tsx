@@ -39,4 +39,4 @@ function ProductPage() {
  *
  */
 
-export default Counter;
+export default ProductPage;
