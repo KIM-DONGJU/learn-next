@@ -15,13 +15,8 @@ function Counter() {
 
   return (
     <div>
-      <p data-cy="counter">{counter}</p>
-      <button data-cy="add-button" onClick={increaseCounter}>
-        +
-      </button>
-      <button data-cy="minus-button" onClick={decreaseCounter}>
-        -
-      </button>
+      <ProductHeader title='타이틀' />
+      <ProductList />
     </div>
   );
 }
