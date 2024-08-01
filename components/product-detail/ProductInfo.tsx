@@ -23,11 +23,11 @@ function ProductInfo({ productDetail }: ProductInfoProps) {
   return (
     <div data-cy="product-info" className={styles.container}>
       <div>
-        <Image src={imageUrl} alt={name} width={300} height={250} />
+        <Image data-cy="product-image" src={imageUrl} alt={name} width={300} height={250} />
       </div>
       <div>
-        <p>{name}</p>
-        <p>{price}</p>
+        <p data-cy="product-name">{name}</p>
+        <p data-cy="product-price">{price}</p>
         <button onClick={addCard}>장바구니 담기</button>
       </div>
     </div>
