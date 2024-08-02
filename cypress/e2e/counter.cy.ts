@@ -1,7 +1,6 @@
 describe('카운터 앱', () => {
   beforeEach(() => {
-    // 현재 그룹핑된 describe 블록 내의 모든 테스트 케이스가 실행되기 전에 한 번 실행
-    cy.visit('http://localhost:3000');
+    cy.visit('/');
   });
 
   // 첫 번째 테스트 시나리오
