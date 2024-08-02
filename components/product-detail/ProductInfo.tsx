@@ -5,6 +5,8 @@ import { createCardItem } from '@/api';
 import { Product } from '@/interfaces/product';
 import styles from './ProductInfo.module.css';
 
+export const ALERT_MESSAGE = '장바구니에 담김';
+
 interface ProductInfoProps {
   productDetail: Product;
 }
@@ -17,6 +19,7 @@ function ProductInfo({ productDetail }: ProductInfoProps) {
     // 1. 장바구니에 아이템을 담는 API 호출
     // 2. 장바구니 페이지로 이동
     const response = await createCardItem(productDetail);
+    alert(ALERT_MESSAGE);
     router.push('/cart');
   };
 
@@ -28,7 +31,7 @@ function ProductInfo({ productDetail }: ProductInfoProps) {
       <div>
         <p data-cy="product-name">{name}</p>
         <p data-cy="product-price">{price}</p>
-        <button onClick={addCard}>장바구니 담기</button>
+        <button data-cy="add-cart-button" onClick={addCard}>장바구니 담기</button>
       </div>
     </div>
   );
